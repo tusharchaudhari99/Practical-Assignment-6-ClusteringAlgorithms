@@ -1,16 +1,21 @@
-Practical-Assignment-6-ClusteringAlgorithms
-Customer segmentation using K-Means, Hierarchical Clustering, and DBSCAN
-with Python, Scikit-learn, data preprocessing, exploratory data
-analysis, cluster evaluation, and visualizations.
-1. Introduction
-This practical assignment focuses on applying and comparing unsupervised
-machine learning algorithms using Python. The Mall Customers dataset is
-used to group customers based on annual income and spending score.
+# **Practical Assignment 6: Clustering Algorithms**
 
-The main aim is to identify and interpret customer segments using
-clustering algorithms and compare their results with metrics such as
-Silhouette Score and Davies-Bouldin Index.
-2. Objectives
+**Customer Segmentation Using K-Means, Hierarchical Clustering, and DBSCAN**
+
+Customer segmentation using Python, Scikit-learn, data preprocessing, exploratory data analysis, cluster evaluation, and visualizations.
+
+---
+
+## **1. Introduction**
+
+This practical assignment focuses on applying and comparing unsupervised machine learning algorithms using Python. The Mall Customers dataset is used to group customers based on annual income and spending score.
+
+The main aim is to identify and interpret customer segments using clustering algorithms and compare their results with metrics such as Silhouette Score and Davies-Bouldin Index.
+
+---
+
+## **2. Objectives**
+
 - Understand the working of unsupervised clustering algorithms.
 - Inspect and clean the dataset.
 - Perform Exploratory Data Analysis (EDA).
@@ -20,111 +25,138 @@ Silhouette Score and Davies-Bouldin Index.
 - Evaluate clustering results using appropriate metrics.
 - Visualize clusters and analyze customer segments.
 - Compare the algorithms and interpret the results.
-3. Dataset Description
-The project uses the Mall Customers dataset, which contains customer
-demographic and spending information.
 
-Dataset file: Mall_Customers.csv
+---
 
-The standard dataset includes columns such as CustomerID, Gender,
-Age, Annual Income (k$), and Spending Score (1-100).
+## **3. Dataset Description**
 
-The clustering process uses these two numerical features:
-- Annual Income (k$)
-- Spending Score (1-100)
-The dataset is inspected for data types, missing values, duplicate rows,
-and summary statistics. The selected features are converted to numeric
-values and missing feature values are handled before clustering.
-4. Algorithms Used
-4.1 K-Means Clustering
-K-Means groups data points into a specified number of clusters by
-assigning each point to the nearest cluster centroid. In this project,
-candidate values of k are examined using the Elbow Method and
-Silhouette Score before fitting the final model.
-4.2 Hierarchical Clustering
-Agglomerative Hierarchical Clustering starts with individual data points
-and progressively merges them into larger clusters. This project uses
-Ward linkage and the selected number of clusters.
-4.3 DBSCAN
-DBSCAN is a density-based clustering algorithm that identifies dense
-groups of samples and marks isolated samples as noise. In this project,
-multiple eps values are evaluated using min_samples = 5. The number
-of clusters, noise points, and cluster evaluation metrics are recorded
-to help select a suitable configuration.
-5. Tools and Technologies
-- Programming language: Python
-- Data manipulation: Pandas, NumPy
-- Data visualization: Matplotlib, Seaborn
-- Machine learning: Scikit-learn
-- Development environment: Jupyter Notebook or JupyterLab
-6. Implementation Steps
+The project uses the Mall Customers dataset, which contains customer demographic and spending information.
+
+**Dataset File:** `Mall_Customers.csv`
+
+The standard dataset includes columns such as `CustomerID`, `Gender`, `Age`, `Annual Income (k$)`, and `Spending Score (1-100)`.
+
+**Features Used for Clustering:**
+
+- `Annual Income (k$)`
+- `Spending Score (1-100)`
+
+The dataset is inspected for data types, missing values, duplicate rows, and summary statistics. The selected features are converted to numeric values, and missing feature values are handled before clustering.
+
+---
+
+## **4. Algorithms Used**
+
+### **4.1 K-Means Clustering**
+
+K-Means groups data points into a specified number of clusters by assigning each point to the nearest cluster centroid. In this project, candidate values of *k* are examined using the Elbow Method and Silhouette Score before fitting the final model.
+
+### **4.2 Hierarchical Clustering**
+
+Agglomerative Hierarchical Clustering starts with individual data points and progressively merges them into larger clusters. This project uses Ward linkage and the selected number of clusters.
+
+### **4.3 DBSCAN**
+
+DBSCAN is a density-based clustering algorithm that identifies dense groups of samples and marks isolated samples as noise. In this project, multiple `eps` values are evaluated using `min_samples = 5`. The number of clusters, noise points, and cluster evaluation metrics are recorded to help select a suitable configuration.
+
+---
+
+## **5. Tools and Technologies**
+
+- **Programming Language:** Python
+- **Data Manipulation:** Pandas, NumPy
+- **Data Visualization:** Matplotlib, Seaborn
+- **Machine Learning:** Scikit-learn
+- **Development Environment:** Jupyter Notebook or JupyterLab
+
+---
+
+## **6. Implementation Steps**
+
 1. Load and inspect the dataset.
-2. Check missing values, duplicate rows, data types, and summary
-   statistics.
-3. Perform exploratory data analysis using distribution plots, scatter
-   plots, and a correlation heatmap.
+2. Check missing values, duplicate rows, data types, and summary statistics.
+3. Perform exploratory data analysis using distribution plots, scatter plots, and a correlation heatmap.
 4. Select annual income and spending score as the clustering features.
 5. Handle missing values in the selected features.
-6. Standardize the features using StandardScaler.
-7. Evaluate candidate values of k for K-Means using inertia and
-   Silhouette Score.
+6. Standardize the features using `StandardScaler`.
+7. Evaluate candidate values of *k* for K-Means using inertia and Silhouette Score.
 8. Train K-Means and Hierarchical Clustering models.
 9. Examine nearest-neighbor distances and tune DBSCAN parameters.
-10. Evaluate the algorithms using Silhouette Score and Davies-Bouldin
-    Index.
+10. Evaluate the algorithms using Silhouette Score and Davies-Bouldin Index.
 11. Visualize the clusters and inspect customer segment profiles.
-12. Compare results and export cluster assignments and evaluation
-    metrics to CSV files.
-7. Evaluation Metrics
-- Silhouette Score: Measures how well each sample fits within its
-  cluster compared with other clusters. Higher values generally
-  indicate better-separated clusters.
-- Davies-Bouldin Index: Measures cluster compactness and
-  separation. Lower values generally indicate better clustering.
-- Number of Clusters: Shows how many groups were found by each
-  algorithm.
-- Noise Points: DBSCAN labels noise observations as -1; the
-  number and percentage of noise points are reported.
-For DBSCAN, the Silhouette Score and Davies-Bouldin Index are calculated
-using non-noise observations when at least two clusters remain.
-8. Results and Comparative Analysis
-K-Means, Hierarchical Clustering, and DBSCAN are compared using the
-evaluation metrics generated by the notebook. Cluster visualizations and
-customer-segment summaries are also used to interpret the results.
+12. Compare results and export cluster assignments and evaluation metrics to CSV files.
 
-The best algorithm should be interpreted using the Silhouette Score,
-Davies-Bouldin Index, number of clusters, and---in DBSCAN's case---the
-percentage of noise points. The actual results depend on the dataset and
-the parameters selected during execution.
-9. How to Run the Project
-Step 1: Install the required libraries
+---
+
+## **7. Evaluation Metrics**
+
+- **Silhouette Score:** Measures how well each sample fits within its cluster compared with other clusters. Higher values generally indicate better-separated clusters.
+- **Davies-Bouldin Index:** Measures cluster compactness and separation. Lower values generally indicate better clustering.
+- **Number of Clusters:** Shows how many groups were found by each algorithm.
+- **Noise Points:** DBSCAN labels noise observations as `-1`; the number and percentage of noise points are reported.
+
+For DBSCAN, the Silhouette Score and Davies-Bouldin Index are calculated using non-noise observations when at least two clusters remain.
+
+---
+
+## **8. Results and Comparative Analysis**
+
+K-Means, Hierarchical Clustering, and DBSCAN are compared using the evaluation metrics generated by the notebook. Cluster visualizations and customer-segment summaries are also used to interpret the results.
+
+The best algorithm should be interpreted using the Silhouette Score, Davies-Bouldin Index, number of clusters, and—in DBSCAN's case—the percentage of noise points. The actual results depend on the dataset and the parameters selected during execution.
+
+---
+
+## **9. How to Run the Project**
+
+### **Step 1: Install the Required Libraries**
+
+```bash
 pip install numpy pandas matplotlib seaborn scikit-learn jupyter
-Step 2: Keep the files together
+```
+
+### **Step 2: Keep the Files Together**
+
 Place the following files in the same directory:
-- Mall_Customer_Clustering_Best_Notebook_Checked(2).ipynb
-- Mall_Customers.csv
-Step 3: Start Jupyter Notebook
+
+- `Mall_Customer_Clustering_Best_Notebook_Checked(2).ipynb`
+- `Mall_Customers.csv`
+
+### **Step 3: Start Jupyter Notebook**
+
+```bash
 jupyter notebook
-Open the notebook and run the cells from top to bottom. Run it in
-Jupyter Notebook or JupyterLab because it uses notebook display
-functions and generates plots.
-10. Output Files
+```
+
+Open the notebook and run the cells from top to bottom. Run it in Jupyter Notebook or JupyterLab because it uses notebook display functions and generates plots.
+
+---
+
+## **10. Output Files**
+
 After the notebook runs successfully, it creates:
-- Mall_Customer_Cluster_Labels.csv --- customer records with
-  K-Means, Hierarchical, and DBSCAN cluster labels.
-- Mall_Clustering_Algorithm_Comparison.csv --- comparison results
-  for the clustering algorithms, including cluster counts, noise
-  statistics, and evaluation metrics.
-The notebook also displays EDA charts, K-Means selection plots, DBSCAN
-tuning results, cluster visualizations, and customer-segment summaries.
-11. Conclusion
-This practical demonstrates the implementation and comparison of three
-unsupervised machine learning algorithms: K-Means, Hierarchical
-Clustering, and DBSCAN. The models group customers using annual income
-and spending score, while visualizations and evaluation metrics help
-assess the clusters and understand the customer segments identified.
-12. Author
-Tushar Vijay Chaudhari
-- Institution: MIT Academy of Engineering (MIT AOE), Alandi, Pune
-- Department: Electronics and Telecommunication Engineering (ENTC)
-- Assignment: Practical Assignment 6: ClusteringAlgorithms
+
+- **`Mall_Customer_Cluster_Labels.csv`** — Customer records with K-Means, Hierarchical, and DBSCAN cluster labels.
+- **`Mall_Clustering_Algorithm_Comparison.csv`** — Comparison results for the clustering algorithms, including cluster counts, noise statistics, and evaluation metrics.
+
+The notebook also displays EDA charts, K-Means selection plots, DBSCAN tuning results, cluster visualizations, and customer-segment summaries.
+
+---
+
+## **11. Conclusion**
+
+This practical demonstrates the implementation and comparison of three unsupervised machine learning algorithms: K-Means, Hierarchical Clustering, and DBSCAN.
+
+The models group customers using annual income and spending score, while visualizations and evaluation metrics help assess the clusters and understand the customer segments identified.
+
+---
+
+## **12. Author**
+
+**Tushar Vijay Chaudhari**
+
+- **Institution:** MIT Academy of Engineering (MIT AOE), Alandi, Pune
+- **Department:** Electronics and Telecommunication Engineering (ENTC)
+- **Assignment:** Practical Assignment 6 — Clustering Algorithms
+
+---
